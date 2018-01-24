@@ -10,19 +10,14 @@ namespace LAB2
     {
         static void Main(string[] args)
         {
-
-            bool Continue = true;
-
-            string choice = "";
-
             Console.WriteLine("Please enter your name:");
             Console.ReadLine();
             Console.WriteLine("Please enter a number between 1 and 100:");
             
             int Input = int.Parse(Console.ReadLine());         
             
-            while(Continue)
-            {
+            
+            
                 
                 if (Input % 2 != 0 && Input >= 0)
                 {
@@ -47,16 +42,18 @@ namespace LAB2
                     Console.WriteLine($"The number you entered is {Input} and is ODD");
                 }
 
-                Console.WriteLine("Would you like to try again?");
-                choice = Console.ReadLine();
+                     Console.WriteLine("Continue? Y/N");
+                     string response = Console.ReadLine();
 
-                if (choice == "No")
-                
-                    Continue = false;
+                      if (response.ToLower() == "yes" || response.ToLower() == "y")
+                     Main(args);
 
-                break;
-            }
-                
+                     else
+                     Console.WriteLine("Goodbye");
+
+
+
+
         }
     }
 }
